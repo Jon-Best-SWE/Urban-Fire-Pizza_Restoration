@@ -1147,7 +1147,7 @@ function setupSharedFooter() {
         <div class="col-sm-4">
           <h5>About This Project</h5>
           <ul class="list-unstyled">
-            <li><a href="https://github.com/YOUR-USERNAME/YOUR-REPOSITORY" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+            <li><a href="https://github.com/Jon-Best-SWE/Urban-Fire-Pizza_Restoration" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
           </ul>
         </div>
       </div>
