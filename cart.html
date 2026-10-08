@@ -1,0 +1,353 @@
+<!doctype html>
+<!-- VERIFY-RESTORED-CART-2026 -->
+<html dir="ltr" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Shopping Cart</title>
+    <!-- base href="index.html" -->
+
+    <link href="Shopping Cart_files/bootstrap.css" rel="stylesheet" />
+
+    <link href="Shopping Cart_files/all.min.css" rel="stylesheet" />
+
+    <link href="Shopping Cart_files/stylesheet.css" rel="stylesheet" />
+
+    <link href="Shopping Cart_files/daterangepicker.css" rel="stylesheet" />
+
+    <link href="static-demo.css" rel="stylesheet" />
+
+    <!-- Original pizza-template styles -->
+    <link href="Shopping Cart_files/icon.css" rel="stylesheet" />
+
+    <link href="Shopping Cart_files/bootstrap_002.css" rel="stylesheet" />
+
+    <link href="Shopping Cart_files/colorbox.css" rel="stylesheet" />
+
+    <link href="Shopping Cart_files/pizzatemplate_style.css" rel="stylesheet" />
+  </head>
+  <body
+    data-static-page="cart.html"
+    data-new-gr-c-s-check-loaded="8.906.0"
+    data-gr-ext-installed=""
+  >
+    <div
+      id="alert"
+      class="toast-container position-fixed top-0 end-0 p-3"
+    ></div>
+    <nav id="top">
+      <div class="container">
+        <div class="nav float-start">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <form
+                action="index.html"
+                method="post"
+                enctype="multipart/form-data"
+                id="form-currency"
+              >
+                <div class="dropdown">
+                  <a href="#" data-bs-toggle="dropdown" class="dropdown-toggle"
+                    ><strong>$</strong>
+                    <span class="d-none d-md-inline">Currency</span>
+                    <i class="fa-solid fa-caret-down"></i
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="index.html" class="dropdown-item">€ Euro</a>
+                    </li>
+                    <li>
+                      <a href="index.html" class="dropdown-item"
+                        >£ Pound Sterling</a
+                      >
+                    </li>
+                    <li>
+                      <a href="index.html" class="dropdown-item">$ US Dollar</a>
+                    </li>
+                  </ul>
+                </div>
+                <input type="hidden" name="code" value="" />
+                <input
+                  type="hidden"
+                  name="redirect"
+                  value="/index.php?route=checkout/cart&amp;language=en-gb"
+                />
+              </form>
+            </li>
+            <li class="list-inline-item"></li>
+          </ul>
+        </div>
+        <div class="nav float-end">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="index.html"><i class="fa-solid fa-phone"></i></a>
+              <span class="d-none d-md-inline">800-555-4455</span>
+            </li>
+            <li class="list-inline-item">
+              <div class="dropdown">
+                <a href="" class="dropdown-toggle" data-bs-toggle="dropdown"
+                  ><i class="fa-solid fa-user"></i>
+                  <span class="d-none d-md-inline">My Account</span>
+                  <i class="fa-solid fa-caret-down"></i
+                ></a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li>
+                    <a href="account.html" class="dropdown-item">Register</a>
+                  </li>
+                  <li>
+                    <a href="account.html" class="dropdown-item">Login</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="list-inline-item">
+              <a href="account.html" id="wishlist-total" title="Wish List (0)"
+                ><i class="fa-solid fa-heart"></i>
+                <span class="d-none d-md-inline">Wish List (0)</span></a
+              >
+            </li>
+            <li class="list-inline-item">
+              <a href="cart.html" title="Shopping Cart"
+                ><i class="fa-solid fa-cart-shopping"></i>
+                <span class="d-none d-md-inline">Shopping Cart</span></a
+              >
+            </li>
+            <li class="list-inline-item">
+              <a href="checkout.html" title="Checkout"
+                ><i class="fa-solid fa-share"></i>
+                <span class="d-none d-md-inline">Checkout</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-lg-4">
+            <div id="logo">
+              <a href="index.html"
+                ><img
+                  src="Shopping%20Cart_files/urban-fire-pizza-logo.gif"
+                  title="Urban Fire Pizza Project"
+                  alt="Urban Fire Pizza Project"
+                  class="img-fluid"
+              /></a>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div id="search" class="input-group mb-3">
+              <input
+                type="text"
+                name="search"
+                placeholder="Search"
+                class="form-control form-control-lg"
+              />
+              <button
+                type="button"
+                data-lang="en-gb"
+                class="btn btn-light btn-lg"
+              >
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+          </div>
+          <div id="header-cart" class="col-md-4 col-lg-3">
+            <div class="dropdown d-grid">
+              <button
+                type="button"
+                data-bs-toggle="dropdown"
+                class="btn btn-inverse btn-block dropdown-toggle"
+              >
+                <i class="fa-solid fa-cart-shopping"></i> 0 item(s) - $0.00
+              </button>
+              <ul
+                class="dropdown-menu dropdown-menu-right"
+                style="width: 500px"
+              >
+                <li>
+                  <p class="text-center">Your shopping cart is empty!</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <nav
+          id="menu"
+          class="navbar navbar-expand-lg navbar-light bg-primary"
+          style=""
+        >
+          <div id="category" class="d-block d-sm-block d-lg-none">
+            Categories
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#narbar-menu"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="narbar-menu">
+            <ul class="nav navbar-nav">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  href="index.html"
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  >Order</a
+                >
+                <div class="dropdown-menu" style="">
+                  <div class="dropdown-inner">
+                    <ul class="list-unstyled">
+                      <li>
+                        <a href="index.html" class="nav-link">Pizzas (6)</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <a href="index.html" class="see-all">Show All Order</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div id="error-not-found" class="container">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="index.html"><i class="fas fa-home"></i></a>
+          </li>
+          <li class="breadcrumb-item"><a href="cart.html">Shopping Cart</a></li>
+        </ul>
+        <div class="row">
+          <div id="content" class="col">
+            <div>
+              <title>Urban Fire Pizza</title>
+              <meta name="keywords" content="" />
+              <meta name="description" content="" />
+              <meta charset="UTF-8" />
+              <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0"
+              />
+
+              <!-- Google Fonts -->
+              <link rel="stylesheet" href="Shopping%20Cart_files/icon.css" />
+
+              <!-- Essential CSS -->
+              <link
+                href="Shopping%20Cart_files/bootstrap_002.css"
+                rel="stylesheet"
+                type="text/css"
+              />
+              <link
+                href="Shopping%20Cart_files/colorbox.css"
+                rel="stylesheet"
+                type="text/css"
+              />
+              <!-- Custom CSS -->
+              <link
+                href="Shopping%20Cart_files/pizzatemplate_style.css"
+                rel="stylesheet"
+                type="text/css"
+              />
+            </div>
+
+            <h1>Shopping Cart</h1>
+            <p>Your shopping cart is empty!</p>
+            <div class="d-inline-block pt-2 pd-2 w-100">
+              <div class="float-end">
+                <a href="index.html" class="btn btn-primary">Continue</a>
+              </div>
+            </div>
+            <div></div>
+
+            <div>
+              <div id="pizzatemplate-confirm">
+                <div class="container">
+                  <div class="head_login-signup">
+                    <div class="text-center">
+                      <span class="ufp-confirm-subheader"
+                        >Estimated Arrival:</span
+                      >
+                      <div class="ufp-confirm-subheader" id="estimateTime">
+                        08:56 PM
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.container -->
+              </div>
+              <!-- /#pizzatemplate-confirm -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+            <h5>Information</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html">Terms &amp; Conditions</a></li>
+              <li><a href="index.html">Delivery Information</a></li>
+              <li><a href="index.html">About Us</a></li>
+              <li><a href="index.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-3">
+            <h5>Customer Service</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html">Contact Us</a></li>
+              <li><a href="account.html">Returns</a></li>
+              <li><a href="index.html">Site Map</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-3">
+            <h5>Extras</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html">Gift Certificates</a></li>
+              <li><a href="account.html">Affiliate</a></li>
+              <li><a href="index.html">Specials</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-3">
+            <h5>My Account</h5>
+            <ul class="list-unstyled">
+              <li><a href="account.html">My Account</a></li>
+              <li><a href="account.html">Order History</a></li>
+              <li><a href="account.html">Wish List</a></li>
+              <li><a href="account.html">Newsletter</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <p>
+          Powered By <a href="https://www.opencart.com/">OpenCart</a><br />
+          Urban Fire Pizza Project © 2023
+        </p>
+        <!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+      </div>
+    </footer>
+
+    <script type="module" src="static-demo.js"></script>
+  </body>
+  <grammarly-desktop-integration
+    data-grammarly-shadow-root="true"
+  ></grammarly-desktop-integration>
+</html>

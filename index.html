@@ -1,0 +1,783 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Urban Fire Pizza</title>
+    <!-- base href="index.html" -->
+    <meta name="description" content="Urban Fire Pizza" />
+
+    <link
+      href="Urban%20Fire%20Pizza_files/bootstrap.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen"
+    />
+    <link
+      href="Urban%20Fire%20Pizza_files/all.min.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <link
+      href="Urban%20Fire%20Pizza_files/stylesheet.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="Urban%20Fire%20Pizza_files/daterangepicker.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link href="static-demo.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body
+    data-static-page="index.html"
+    data-new-gr-c-s-check-loaded="8.906.0"
+    data-gr-ext-installed=""
+  >
+    <div
+      id="alert"
+      class="toast-container position-fixed top-0 end-0 p-3"
+    ></div>
+    <nav id="top">
+      <div class="container">
+        <div class="nav float-start">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <form
+                action="index.html"
+                method="post"
+                enctype="multipart/form-data"
+                id="form-currency"
+              >
+                <div class="dropdown">
+                  <a href="#" data-bs-toggle="dropdown" class="dropdown-toggle"
+                    ><strong>$</strong>
+                    <span class="d-none d-md-inline">Currency</span>
+                    <i class="fa-solid fa-caret-down"></i
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="index.html" class="dropdown-item">€ Euro</a>
+                    </li>
+                    <li>
+                      <a href="index.html" class="dropdown-item"
+                        >£ Pound Sterling</a
+                      >
+                    </li>
+                    <li>
+                      <a href="index.html" class="dropdown-item">$ US Dollar</a>
+                    </li>
+                  </ul>
+                </div>
+                <input type="hidden" name="code" value="" />
+                <input
+                  type="hidden"
+                  name="redirect"
+                  value="/index.php?route=common/home&amp;language=en-gb"
+                />
+              </form>
+            </li>
+            <li class="list-inline-item"></li>
+          </ul>
+        </div>
+        <div class="nav float-end">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="index.html"><i class="fa-solid fa-phone"></i></a>
+              <span class="d-none d-md-inline">800-555-4455</span>
+            </li>
+            <li class="list-inline-item">
+              <div class="dropdown">
+                <a href="" class="dropdown-toggle" data-bs-toggle="dropdown"
+                  ><i class="fa-solid fa-user"></i>
+                  <span class="d-none d-md-inline">My Account</span>
+                  <i class="fa-solid fa-caret-down"></i
+                ></a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li>
+                    <a href="account.html" class="dropdown-item">Register</a>
+                  </li>
+                  <li>
+                    <a href="account.html" class="dropdown-item">Login</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="list-inline-item">
+              <a href="account.html" id="wishlist-total" title="Wish List (0)"
+                ><i class="fa-solid fa-heart"></i>
+                <span class="d-none d-md-inline">Wish List (0)</span></a
+              >
+            </li>
+            <li class="list-inline-item">
+              <a href="cart.html" title="Shopping Cart"
+                ><i class="fa-solid fa-cart-shopping"></i>
+                <span class="d-none d-md-inline">Shopping Cart</span></a
+              >
+            </li>
+            <li class="list-inline-item">
+              <a href="checkout.html" title="Checkout"
+                ><i class="fa-solid fa-share"></i>
+                <span class="d-none d-md-inline">Checkout</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-lg-4">
+            <div id="logo">
+              <a href="index.html"
+                ><img
+                  src="Urban%20Fire%20Pizza_files/urban-fire-pizza-logo.gif"
+                  title="Urban Fire Pizza Project"
+                  alt="Urban Fire Pizza Project"
+                  class="img-fluid"
+              /></a>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div id="search" class="input-group mb-3">
+              <input
+                type="text"
+                name="search"
+                placeholder="Search"
+                class="form-control form-control-lg"
+              />
+              <button
+                type="button"
+                data-lang="en-gb"
+                class="btn btn-light btn-lg"
+              >
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+          </div>
+          <div id="header-cart" class="col-md-4 col-lg-3">
+            <div class="dropdown d-grid">
+              <button
+                type="button"
+                data-bs-toggle="dropdown"
+                class="btn btn-inverse btn-block dropdown-toggle"
+              >
+                <i class="fa-solid fa-cart-shopping"></i> 0 item(s) - $0.00
+              </button>
+              <ul
+                class="dropdown-menu dropdown-menu-right"
+                style="width: 500px"
+              >
+                <li>
+                  <p class="text-center">Your shopping cart is empty!</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <nav
+          id="menu"
+          class="navbar navbar-expand-lg navbar-light bg-primary"
+          style=""
+        >
+          <div id="category" class="d-block d-sm-block d-lg-none">
+            Categories
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#narbar-menu"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="narbar-menu">
+            <ul class="nav navbar-nav">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  href="index.html"
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  >Order</a
+                >
+                <div class="dropdown-menu" style="">
+                  <div class="dropdown-inner">
+                    <ul class="list-unstyled">
+                      <li>
+                        <a href="index.html" class="nav-link">Pizzas (6)</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <a href="index.html" class="see-all">Show All Order</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div id="common-home" class="container">
+        <div
+          id="paypal_message"
+          class="paypal-message"
+          style="text-align: center"
+        >
+          <div
+            id="paypal_message_container"
+            class="paypal-message-container"
+            style="display: block; width: auto"
+          >
+            <div
+              data-pp-message=""
+              data-pp-amount="0.00"
+              data-pp-style-layout="text"
+              data-pp-style-text-color="black"
+              data-pp-style-text-size="12"
+              data-pp-id="1"
+            >
+              <span id="zoid-paypal-message-uid_b2ffda141f_mdi6mjy6mtu"
+                ><style nonce="">
+                  #zoid-paypal-message-uid_b2ffda141f_mdi6mjy6mtu > iframe {
+                    width: 100%;
+                    height: 0;
+                  }
+
+                  #zoid-paypal-message-uid_b2ffda141f_mdi6mjy6mtu
+                    > iframe:nth-of-type(2) {
+                    display: none;
+                  }
+                </style></span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div id="content" class="col">
+            <div>
+              <title>Urban Fire Pizza</title>
+              <meta name="keywords" content="" />
+              <meta name="description" content="" />
+              <meta charset="UTF-8" />
+              <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0"
+              />
+
+              <!-- Google Fonts -->
+              <link
+                rel="stylesheet"
+                href="Urban%20Fire%20Pizza_files/icon.css"
+              />
+
+              <!-- Essential CSS -->
+              <link
+                href="Urban%20Fire%20Pizza_files/bootstrap_002.css"
+                rel="stylesheet"
+                type="text/css"
+              />
+              <link
+                href="Urban%20Fire%20Pizza_files/colorbox.css"
+                rel="stylesheet"
+                type="text/css"
+              />
+              <!-- Custom CSS -->
+              <link
+                href="Urban%20Fire%20Pizza_files/pizzatemplate_style.css"
+                rel="stylesheet"
+                type="text/css"
+              />
+            </div>
+
+            <div>
+              <div>
+                <!-- Carousel -->
+                <div
+                  id="pizzatemplate-carousel"
+                  class="carousel slide"
+                  data-ride="carousel"
+                >
+                  <div>
+                    <video
+                      class="ufp-home-video"
+                      width="1920"
+                      height="1200"
+                      autoplay="autoplay"
+                      muted="muted"
+                      loop=""
+                      poster="images/pizza-main.jpg"
+                    >
+                      <source
+                        src="Urban%20Fire%20Pizza_files/ufp-home-video.mp4"
+                        type="video/mp4"
+                      />
+                      Your browser does not support the video tag.
+                    </video>
+                    <div class="video-head">
+                      HOT AND READY!<br /><span
+                        style="
+                          font-size: 50px;
+                          font-style: normal;
+                          font-weight: 600;
+                          top: 142px;
+                          position: absolute;
+                          width: 100%;
+                        "
+                        >STRAIGHT FROM THE FIRE TO YOUR HOME.</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="pizzatemplate-welcome" id="pizzatemplate-welcome">
+                <div class="container">
+                  <div class="pizzatemplate-slogan text-center">
+                    <h1 class="welcome-heading">
+                      <span
+                        class="txt_darkgrey"
+                        style="
+                          font-size: 52px;
+                          font-weight: 700;
+                          font-style: italic;
+                        "
+                        >Welcome to
+                      </span>
+                      <span
+                        class="txt_orange"
+                        style="
+                          font-size: 52px;
+                          font-weight: 700;
+                          font-style: italic;
+                        "
+                        >Urban Fire Pizza</span
+                      >
+                    </h1>
+                    <p
+                      class="txt_slogan"
+                      style="
+                        font-size: 24px;
+                        font-weight: 500;
+                        font-style: italic;
+                      "
+                    >
+                      Choose from one of our world famous pizzas or build your
+                      own.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h3 id="featured-products">Featured</h3>
+            <div class="row">
+              <div class="col">
+                <form method="post">
+                  <div class="product-thumb">
+                    <div class="image">
+                      <a href="pepperoni.html"
+                        ><img
+                          src="Urban%20Fire%20Pizza_files/pepporoni-pizza-200x200.jpg"
+                          alt="Pepperoni Pizza"
+                          title="Pepperoni Pizza"
+                          class="img-fluid"
+                      /></a>
+                    </div>
+                    <div class="content">
+                      <div class="description">
+                        <h4><a href="pepperoni.html">Pepperoni Pizza</a></h4>
+                        <p>
+                          Pepperoni pizza is an American pizza variety which
+                          includes one of the country's most beloved toppin..
+                        </p>
+                        <div class="price">
+                          <span class="price-new">$6.99</span>
+                          <span class="price-tax">Ex Tax: $6.99</span>
+                        </div>
+                      </div>
+                      <div class="button-group">
+                        <button
+                          type="submit"
+                          data-bs-toggle="tooltip"
+                          title="Add to Cart"
+                        >
+                          <i class="fa-solid fa-shopping-cart"></i>
+                        </button>
+                        <button
+                          type="submit"
+                          formaction="/index.php?route=account/wishlist|add&amp;language=en-gb"
+                          data-bs-toggle="tooltip"
+                          title="Add to Wish List"
+                        >
+                          <i class="fa-solid fa-heart"></i>
+                        </button>
+                        <button
+                          type="submit"
+                          formaction="/index.php?route=product/compare|add&amp;language=en-gb"
+                          data-bs-toggle="tooltip"
+                          title="Compare this Product"
+                        >
+                          <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <input type="hidden" name="product_id" value="43" />
+                    <input type="hidden" name="quantity" value="1" />
+                  </div>
+                </form>
+              </div>
+              <div class="col">
+                <form method="post">
+                  <div class="product-thumb">
+                    <div class="image">
+                      <a href="margherita.html"
+                        ><img
+                          src="Urban%20Fire%20Pizza_files/margherita-pizza-200x200.jpg"
+                          alt="Margherita Pizza"
+                          title="Margherita Pizza"
+                          class="img-fluid"
+                      /></a>
+                    </div>
+                    <div class="content">
+                      <div class="description">
+                        <h4><a href="margherita.html">Margherita Pizza</a></h4>
+                        <p>
+                          Pizza margherita, as the Italians call it, is a simple
+                          pizza hailing from Naples. When done right, m..
+                        </p>
+                        <div class="price">
+                          <span class="price-new">$9.99</span>
+                          <span class="price-tax">Ex Tax: $9.99</span>
+                        </div>
+                      </div>
+                      <div class="button-group">
+                        <button
+                          type="submit"
+                          data-bs-toggle="tooltip"
+                          title="Add to Cart"
+                        >
+                          <i class="fa-solid fa-shopping-cart"></i>
+                        </button>
+                        <button
+                          type="submit"
+                          formaction="/index.php?route=account/wishlist|add&amp;language=en-gb"
+                          data-bs-toggle="tooltip"
+                          title="Add to Wish List"
+                        >
+                          <i class="fa-solid fa-heart"></i>
+                        </button>
+                        <button
+                          type="submit"
+                          formaction="/index.php?route=product/compare|add&amp;language=en-gb"
+                          data-bs-toggle="tooltip"
+                          title="Compare this Product"
+                        >
+                          <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <input type="hidden" name="product_id" value="50" />
+                    <input type="hidden" name="quantity" value="1" />
+                  </div>
+                </form>
+              </div>
+              <div class="col">
+                <form method="post">
+                  <div class="product-thumb">
+                    <div class="image">
+                      <a href="artichoke.html"
+                        ><img
+                          src="Urban%20Fire%20Pizza_files/artichoke-pizza-200x200.jpg"
+                          alt="Artichoke Pizza"
+                          title="Artichoke Pizza"
+                          class="img-fluid"
+                      /></a>
+                    </div>
+                    <div class="content">
+                      <div class="description">
+                        <h4><a href="artichoke.html">Artichoke Pizza</a></h4>
+                        <p>
+                          Meet our favorite artichoke pizza! The golden pizza
+                          crust is topped with creamy mozzarella and artic..
+                        </p>
+                        <div class="price">
+                          <span class="price-new">$6.99</span>
+                          <span class="price-tax">Ex Tax: $6.99</span>
+                        </div>
+                      </div>
+                      <div class="button-group">
+                        <button
+                          type="submit"
+                          data-bs-toggle="tooltip"
+                          title="Add to Cart"
+                        >
+                          <i class="fa-solid fa-shopping-cart"></i>
+                        </button>
+                        <button
+                          type="submit"
+                          formaction="/index.php?route=account/wishlist|add&amp;language=en-gb"
+                          data-bs-toggle="tooltip"
+                          title="Add to Wish List"
+                        >
+                          <i class="fa-solid fa-heart"></i>
+                        </button>
+                        <button
+                          type="submit"
+                          formaction="/index.php?route=product/compare|add&amp;language=en-gb"
+                          data-bs-toggle="tooltip"
+                          title="Compare this Product"
+                        >
+                          <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <input type="hidden" name="product_id" value="51" />
+                    <input type="hidden" name="quantity" value="1" />
+                  </div>
+                </form>
+              </div>
+              <div class="col">
+                <form method="post">
+                  <div class="product-thumb">
+                    <div class="image">
+                      <a href="meat-lovers.html"
+                        ><img
+                          src="Urban%20Fire%20Pizza_files/meat-lovers-pizza-200x200.jpg"
+                          alt="Meat Lover's Pizza"
+                          title="Meat Lover's Pizza"
+                          class="img-fluid"
+                      /></a>
+                    </div>
+                    <div class="content">
+                      <div class="description">
+                        <h4>
+                          <a href="meat-lovers.html">Meat Lover's Pizza</a>
+                        </h4>
+                        <p>
+                          This Meat Lovers Pizza is piled high with melty
+                          cheese, spicy pepperoni, crispy bacon, juicy sausage..
+                        </p>
+                        <div class="price">
+                          <span class="price-new">$7.99</span>
+                          <span class="price-tax">Ex Tax: $7.99</span>
+                        </div>
+                      </div>
+                      <div class="button-group">
+                        <button
+                          type="submit"
+                          data-bs-toggle="tooltip"
+                          title="Add to Cart"
+                        >
+                          <i class="fa-solid fa-shopping-cart"></i>
+                        </button>
+                        <button
+                          type="submit"
+                          formaction="/index.php?route=account/wishlist|add&amp;language=en-gb"
+                          data-bs-toggle="tooltip"
+                          title="Add to Wish List"
+                        >
+                          <i class="fa-solid fa-heart"></i>
+                        </button>
+                        <button
+                          type="submit"
+                          formaction="/index.php?route=product/compare|add&amp;language=en-gb"
+                          data-bs-toggle="tooltip"
+                          title="Compare this Product"
+                        >
+                          <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <input type="hidden" name="product_id" value="52" />
+                    <input type="hidden" name="quantity" value="1" />
+                  </div>
+                </form>
+              </div>
+              <div class="col">
+                <form method="post">
+                  <div class="product-thumb">
+                    <div class="image">
+                      <a href="vegetarian.html"
+                        ><img
+                          src="Urban%20Fire%20Pizza_files/vegetarian-pizza-200x200.jpg"
+                          alt="Vegetarian Pizza"
+                          title="Vegetarian Pizza"
+                          class="img-fluid"
+                      /></a>
+                    </div>
+                    <div class="content">
+                      <div class="description">
+                        <h4><a href="vegetarian.html">Vegetarian Pizza</a></h4>
+                        <p>
+                          Piled with flavorful veggies like peppers and
+                          artichokes, this vegetarian pizza will be a hit at
+                          you..
+                        </p>
+                        <div class="price">
+                          <span class="price-new">$6.99</span>
+                          <span class="price-tax">Ex Tax: $6.99</span>
+                        </div>
+                      </div>
+                      <div class="button-group">
+                        <button
+                          type="submit"
+                          data-bs-toggle="tooltip"
+                          title="Add to Cart"
+                        >
+                          <i class="fa-solid fa-shopping-cart"></i>
+                        </button>
+                        <button
+                          type="submit"
+                          formaction="/index.php?route=account/wishlist|add&amp;language=en-gb"
+                          data-bs-toggle="tooltip"
+                          title="Add to Wish List"
+                        >
+                          <i class="fa-solid fa-heart"></i>
+                        </button>
+                        <button
+                          type="submit"
+                          formaction="/index.php?route=product/compare|add&amp;language=en-gb"
+                          data-bs-toggle="tooltip"
+                          title="Compare this Product"
+                        >
+                          <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <input type="hidden" name="product_id" value="53" />
+                    <input type="hidden" name="quantity" value="1" />
+                  </div>
+                </form>
+              </div>
+              <div class="col">
+                <form method="post">
+                  <div class="product-thumb">
+                    <div class="image">
+                      <a href="build-your-own.html"
+                        ><img
+                          src="Urban%20Fire%20Pizza_files/build-your-own-pizza-200x200.jpg"
+                          alt="Build Your Own Pizza"
+                          title="Build Your Own Pizza"
+                          class="img-fluid"
+                      /></a>
+                    </div>
+                    <div class="content">
+                      <div class="description">
+                        <h4>
+                          <a href="build-your-own.html">Build Your Own Pizza</a>
+                        </h4>
+                        <p>
+                          Create your own pizza by choosing a crust, sauce and
+                          toppings! Select from three crust sizes and thi..
+                        </p>
+                        <div class="price">
+                          <span class="price-new">$4.99</span>
+                          <span class="price-tax">Ex Tax: $4.99</span>
+                        </div>
+                      </div>
+                      <div class="button-group">
+                        <button
+                          type="submit"
+                          data-bs-toggle="tooltip"
+                          title="Add to Cart"
+                        >
+                          <i class="fa-solid fa-shopping-cart"></i>
+                        </button>
+                        <button
+                          type="submit"
+                          formaction="/index.php?route=account/wishlist|add&amp;language=en-gb"
+                          data-bs-toggle="tooltip"
+                          title="Add to Wish List"
+                        >
+                          <i class="fa-solid fa-heart"></i>
+                        </button>
+                        <button
+                          type="submit"
+                          formaction="/index.php?route=product/compare|add&amp;language=en-gb"
+                          data-bs-toggle="tooltip"
+                          title="Compare this Product"
+                        >
+                          <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <input type="hidden" name="product_id" value="54" />
+                    <input type="hidden" name="quantity" value="1" />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+            <h5>Information</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html">Terms &amp; Conditions</a></li>
+              <li><a href="index.html">Delivery Information</a></li>
+              <li><a href="index.html">About Us</a></li>
+              <li><a href="index.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-3">
+            <h5>Customer Service</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html">Contact Us</a></li>
+              <li><a href="account.html">Returns</a></li>
+              <li><a href="index.html">Site Map</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-3">
+            <h5>Extras</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html">Gift Certificates</a></li>
+              <li><a href="account.html">Affiliate</a></li>
+              <li><a href="index.html">Specials</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-3">
+            <h5>My Account</h5>
+            <ul class="list-unstyled">
+              <li><a href="account.html">My Account</a></li>
+              <li><a href="account.html">Order History</a></li>
+              <li><a href="account.html">Wish List</a></li>
+              <li><a href="account.html">Newsletter</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <p>
+          Powered By <a href="https://www.opencart.com/">OpenCart</a><br />
+          Urban Fire Pizza Project © 2023
+        </p>
+        <!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+      </div>
+    </footer>
+
+    <script type="module" src="static-demo.js"></script>
+  </body>
+  <grammarly-desktop-integration
+    data-grammarly-shadow-root="true"
+  ></grammarly-desktop-integration>
+</html>

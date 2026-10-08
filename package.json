@@ -1,0 +1,9 @@
+{
+  "name": "urban-fire-pizza-historical-restoration",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Multi-page static restoration built directly from the archived Urban Fire Pizza frontend.",
+  "scripts": { "test": "node --test", "check": "node --test" },
+  "engines": { "node": ">=20" }
+}

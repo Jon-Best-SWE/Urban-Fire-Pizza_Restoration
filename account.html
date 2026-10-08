@@ -1,0 +1,501 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Register Account</title>
+    <!-- base href="index.html" -->
+
+    <link
+      href="Register%20Account_files/bootstrap.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen"
+    />
+    <link
+      href="Register%20Account_files/all.min.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <link
+      href="Register%20Account_files/stylesheet.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <link
+      href="Register%20Account_files/daterangepicker.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Original Urban Fire Pizza theme -->
+    <link rel="stylesheet" href="Register%20Account_files/icon.css" />
+    <link
+      href="Register%20Account_files/bootstrap_002.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="Register%20Account_files/colorbox.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="Register%20Account_files/pizzatemplate_style.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link href="static-demo.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body
+    data-static-page="account.html"
+    data-new-gr-c-s-check-loaded="8.906.0"
+    data-gr-ext-installed=""
+  >
+    <div
+      id="alert"
+      class="toast-container position-fixed top-0 end-0 p-3"
+    ></div>
+    <nav id="top">
+      <div class="container">
+        <div class="nav float-start">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <form
+                action="index.html"
+                method="post"
+                enctype="multipart/form-data"
+                id="form-currency"
+              >
+                <div class="dropdown">
+                  <a href="#" data-bs-toggle="dropdown" class="dropdown-toggle"
+                    ><strong>$</strong>
+                    <span class="d-none d-md-inline">Currency</span>
+                    <i class="fa-solid fa-caret-down"></i
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="index.html" class="dropdown-item">€ Euro</a>
+                    </li>
+                    <li>
+                      <a href="index.html" class="dropdown-item"
+                        >£ Pound Sterling</a
+                      >
+                    </li>
+                    <li>
+                      <a href="index.html" class="dropdown-item">$ US Dollar</a>
+                    </li>
+                  </ul>
+                </div>
+                <input type="hidden" name="code" value="" />
+                <input
+                  type="hidden"
+                  name="redirect"
+                  value="/index.php?route=account/register&amp;language=en-gb"
+                />
+              </form>
+            </li>
+            <li class="list-inline-item"></li>
+          </ul>
+        </div>
+        <div class="nav float-end">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="index.html"><i class="fa-solid fa-phone"></i></a>
+              <span class="d-none d-md-inline">800-555-4455</span>
+            </li>
+            <li class="list-inline-item">
+              <div class="dropdown">
+                <a href="" class="dropdown-toggle" data-bs-toggle="dropdown"
+                  ><i class="fa-solid fa-user"></i>
+                  <span class="d-none d-md-inline">My Account</span>
+                  <i class="fa-solid fa-caret-down"></i
+                ></a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li>
+                    <a href="account.html" class="dropdown-item">Register</a>
+                  </li>
+                  <li>
+                    <a href="account.html" class="dropdown-item">Login</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="list-inline-item">
+              <a href="account.html" id="wishlist-total" title="Wish List (0)"
+                ><i class="fa-solid fa-heart"></i>
+                <span class="d-none d-md-inline">Wish List (0)</span></a
+              >
+            </li>
+            <li class="list-inline-item">
+              <a href="cart.html" title="Shopping Cart"
+                ><i class="fa-solid fa-cart-shopping"></i>
+                <span class="d-none d-md-inline">Shopping Cart</span></a
+              >
+            </li>
+            <li class="list-inline-item">
+              <a href="checkout.html" title="Checkout"
+                ><i class="fa-solid fa-share"></i>
+                <span class="d-none d-md-inline">Checkout</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-lg-4">
+            <div id="logo">
+              <a href="index.html"
+                ><img
+                  src="Register%20Account_files/urban-fire-pizza-logo.gif"
+                  title="Urban Fire Pizza Project"
+                  alt="Urban Fire Pizza Project"
+                  class="img-fluid"
+              /></a>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div id="search" class="input-group mb-3">
+              <input
+                type="text"
+                name="search"
+                placeholder="Search"
+                class="form-control form-control-lg"
+              />
+              <button
+                type="button"
+                data-lang="en-gb"
+                class="btn btn-light btn-lg"
+              >
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+          </div>
+          <div id="header-cart" class="col-md-4 col-lg-3">
+            <div class="dropdown d-grid">
+              <button
+                type="button"
+                data-bs-toggle="dropdown"
+                class="btn btn-inverse btn-block dropdown-toggle"
+              >
+                <i class="fa-solid fa-cart-shopping"></i> 10 item(s) - $229.90
+              </button>
+              <ul
+                class="dropdown-menu dropdown-menu-right"
+                style="width: 500px"
+              >
+                <li>
+                  <table class="table table-sm table-striped">
+                    <tbody>
+                      <tr>
+                        <td class="text-center">
+                          <a href="pepperoni.html"
+                            ><img
+                              src="Register%20Account_files/pepporoni-pizza-136x136.jpg"
+                              alt="Pepperoni Pizza"
+                              title="Pepperoni Pizza"
+                              class="img-thumbnail"
+                          /></a>
+                        </td>
+                        <td class="text-start">
+                          <a href="pepperoni.html">Pepperoni Pizza</a>
+                          <br />
+                          <small> - Sizes 14" Medium</small>
+                          <br />
+                          <small> - Crusts Thin</small>
+                          <br />
+                          <small> - Sauces Alfredo</small>
+                          <br />
+                          <small> - Cheeses Cheddar</small>
+                          <br />
+                          <small> - Meats Pepperoni</small>
+                          <br />
+                          <small> - Meats Chicken</small>
+                          <br />
+                          <small> - Meats Hamburger</small>
+                          <br />
+                          <small> - Meats Italian Sausage</small>
+                          <br />
+                          <small> - Meats Bacon</small>
+                          <br />
+                          <small> - Ingredients Artichoke</small>
+                          <br />
+                          <small> - Ingredients Bell Peppers</small>
+                          <br />
+                          <small> - Ingredients Black Olives</small>
+                          <br />
+                          <small> - Ingredients Mushrooms</small>
+                          <br />
+                          <small> - Ingredients Onions</small>
+                        </td>
+                        <td class="text-end">x 10</td>
+                        <td class="text-end">$229.90</td>
+                        <td class="text-end">
+                          <form action="cart.html" method="post">
+                            <input type="hidden" name="key" value="1" />
+                            <button
+                              type="submit"
+                              data-bs-toggle="tooltip"
+                              title="Remove"
+                              class="btn btn-danger"
+                            >
+                              <i class="fa-solid fa-circle-xmark"></i>
+                            </button>
+                          </form>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div>
+                    <table class="table table-sm table-bordered">
+                      <tbody>
+                        <tr>
+                          <td class="text-end"><strong>Sub-Total</strong></td>
+                          <td class="text-end">$229.90</td>
+                        </tr>
+                        <tr>
+                          <td class="text-end"><strong>Total</strong></td>
+                          <td class="text-end">$229.90</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p class="text-end">
+                      <a href="cart.html"
+                        ><strong
+                          ><i class="fa-solid fa-cart-shopping"></i> View
+                          Cart</strong
+                        ></a
+                      >&nbsp;&nbsp;&nbsp;<a href="checkout.html"
+                        ><strong
+                          ><i class="fa-solid fa-share"></i> Checkout</strong
+                        ></a
+                      >
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <nav
+          id="menu"
+          class="navbar navbar-expand-lg navbar-light bg-primary"
+          style=""
+        >
+          <div id="category" class="d-block d-sm-block d-lg-none">
+            Categories
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#narbar-menu"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="narbar-menu">
+            <ul class="nav navbar-nav">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  href="index.html"
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  >Order</a
+                >
+                <div class="dropdown-menu" style="">
+                  <div class="dropdown-inner">
+                    <ul class="list-unstyled">
+                      <li>
+                        <a href="index.html" class="nav-link">Pizzas (6)</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <a href="index.html" class="see-all">Show All Order</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div id="account-register" class="container">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="index.html"><i class="fas fa-home"></i></a>
+          </li>
+          <li class="breadcrumb-item"><a href="account.html">Account</a></li>
+          <li class="breadcrumb-item"><a href="account.html">Register</a></li>
+        </ul>
+        <div class="row">
+          <div id="content" class="col">
+            <h1>Register Account</h1>
+            <p>
+              If you already have an account with us, please login at the
+              <a href="account.html">login page</a>.
+            </p>
+            <form id="form-register" action="account.html" method="post">
+              <fieldset id="account">
+                <legend>Your Personal Details</legend>
+                <div class="row mb-3 required">
+                  <label for="input-firstname" class="col-sm-2 col-form-label"
+                    >First Name</label
+                  >
+                  <div class="col-sm-12">
+                    <input
+                      type="text"
+                      name="firstname"
+                      placeholder="First Name"
+                      id="input-firstname"
+                      class="form-control"
+                      required
+                    />
+                    <div id="error-firstname" class="invalid-feedback"></div>
+                  </div>
+                </div>
+                <div class="row mb-3 required">
+                  <label for="input-lastname" class="col-sm-2 col-form-label"
+                    >Last Name</label
+                  >
+                  <div class="col-sm-12">
+                    <input
+                      type="text"
+                      name="lastname"
+                      placeholder="Last Name"
+                      id="input-lastname"
+                      class="form-control"
+                      required
+                    />
+                    <div id="error-lastname" class="invalid-feedback"></div>
+                  </div>
+                </div>
+                <div class="row mb-3 required">
+                  <label for="input-email" class="col-sm-2 col-form-label"
+                    >E-Mail</label
+                  >
+                  <div class="col-sm-12">
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="E-Mail"
+                      id="input-email"
+                      class="form-control"
+                      required
+                    />
+                    <div id="error-email" class="invalid-feedback"></div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Your Password</legend>
+                <div class="row mb-3 required">
+                  <label for="input-password" class="col-sm-2 col-form-label"
+                    >Password</label
+                  >
+                  <div class="col-sm-12">
+                    <input
+                      type="password"
+                      name="password"
+                      value=""
+                      placeholder="Password"
+                      id="input-password"
+                      class="form-control"
+                      required
+                    />
+                    <div id="error-password" class="invalid-feedback"></div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <button
+                type="submit"
+                class="btn btn-primary"
+                style="margin: 10px auto 0 auto; display: block; width: 150px"
+              >
+                Continue
+              </button>
+            </form>
+          </div>
+          <aside id="column-right" class="col-3 d-none d-md-block">
+            <div class="list-group mb-3">
+              <a href="account.html" class="list-group-item"> Demo Account </a>
+
+              <a href="cart.html" class="list-group-item"> Shopping Cart </a>
+
+              <a href="index.html" class="list-group-item">
+                Continue Shopping
+              </a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+            <h5>Information</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html">Terms &amp; Conditions</a></li>
+              <li><a href="index.html">Delivery Information</a></li>
+              <li><a href="index.html">About Us</a></li>
+              <li><a href="index.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-3">
+            <h5>Customer Service</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html">Contact Us</a></li>
+              <li><a href="account.html">Returns</a></li>
+              <li><a href="index.html">Site Map</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-3">
+            <h5>Extras</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html">Gift Certificates</a></li>
+              <li><a href="account.html">Affiliate</a></li>
+              <li><a href="index.html">Specials</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-3">
+            <h5>My Account</h5>
+            <ul class="list-unstyled">
+              <li><a href="account.html">My Account</a></li>
+              <li><a href="account.html">Order History</a></li>
+              <li><a href="account.html">Wish List</a></li>
+              <li><a href="account.html">Newsletter</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <p>
+          Powered By <a href="https://www.opencart.com/">OpenCart</a><br />
+          Urban Fire Pizza Project © 2023
+        </p>
+        <!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+      </div>
+    </footer>
+
+    <script type="module" src="static-demo.js"></script>
+  </body>
+  <grammarly-desktop-integration
+    data-grammarly-shadow-root="true"
+  ></grammarly-desktop-integration>
+</html>

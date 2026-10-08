@@ -1,0 +1,1170 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Checkout</title>
+    <!-- base href="index.html" -->
+
+    <link
+      href="Checkout_files/bootstrap.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen"
+    />
+    <link href="Checkout_files/all.min.css" type="text/css" rel="stylesheet" />
+    <link
+      href="Checkout_files/stylesheet.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <link
+      href="Checkout_files/daterangepicker.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="static-demo.css" rel="stylesheet" type="text/css" />
+
+    <!-- Original Urban Fire Pizza template styles -->
+    <link href="Checkout_files/icon.css" rel="stylesheet" type="text/css" />
+    <link
+      href="Checkout_files/bootstrap_002.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="Checkout_files/colorbox.css" rel="stylesheet" type="text/css" />
+    <link
+      href="Checkout_files/pizzatemplate_style.css"
+      rel="stylesheet"
+      type="text/css"
+    /></head
+  ><apple-pay-merchandising-modal
+    style="
+      visibility: hidden;
+      font-family: var(
+        --apple-pay-font-family,
+        &quot;-apple-system&quot;,
+        &quot;SF Pro Display&quot;,
+        &quot;SF Pro Icons&quot;,
+        &quot;Helvetica Neue&quot;,
+        &quot;Helvetica&quot;,
+        &quot;Arial&quot;,
+        &quot;sans-serif&quot;
+      );
+      position: fixed;
+      overflow: scroll;
+      inset: 0px;
+      display: flex;
+      background-color: rgba(50, 50, 50, 0.58);
+      justify-content: center;
+      padding: 2rem 0px;
+      user-select: text;
+      opacity: 0;
+      transition:
+        visibility 0s ease 0.28s,
+        opacity 0.28s ease 0s,
+        z-index 0s ease 0.28s;
+      z-index: -1;
+    "
+  ></apple-pay-merchandising-modal>
+  <body
+    data-static-page="checkout.html"
+    data-new-gr-c-s-check-loaded="8.906.0"
+    data-gr-ext-installed=""
+  >
+    <div
+      id="alert"
+      class="toast-container position-fixed top-0 end-0 p-3"
+    ></div>
+    <nav id="top">
+      <div class="container">
+        <div class="nav float-start">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <span aria-label="Prices are shown in US dollars"
+                ><strong>$</strong>
+                <span class="d-none d-md-inline">USD</span></span
+              >
+            </li>
+            <li class="list-inline-item"></li>
+          </ul>
+        </div>
+        <div class="nav float-end">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="index.html"><i class="fa-solid fa-phone"></i></a>
+              <span class="d-none d-md-inline">800-555-4455</span>
+            </li>
+            <li class="list-inline-item">
+              <a href="account.html"
+                ><i class="fa-solid fa-user"></i>
+                <span class="d-none d-md-inline">Demo Account</span></a
+              >
+            </li>
+            <li class="list-inline-item">
+              <a href="index.html" title="Pizza Menu"
+                ><i class="fa-solid fa-pizza-slice"></i>
+                <span class="d-none d-md-inline">Menu</span></a
+              >
+            </li>
+            <li class="list-inline-item">
+              <a href="cart.html" title="Shopping Cart"
+                ><i class="fa-solid fa-cart-shopping"></i>
+                <span class="d-none d-md-inline">Shopping Cart</span></a
+              >
+            </li>
+            <li class="list-inline-item">
+              <a href="checkout.html" title="Checkout"
+                ><i class="fa-solid fa-share"></i>
+                <span class="d-none d-md-inline">Checkout</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-lg-4">
+            <div id="logo">
+              <a href="index.html"
+                ><img
+                  src="Checkout_files/urban-fire-pizza-logo.gif"
+                  title="Urban Fire Pizza Project"
+                  alt="Urban Fire Pizza Project"
+                  class="img-fluid"
+              /></a>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div id="search" class="input-group mb-3">
+              <input
+                type="text"
+                name="search"
+                placeholder="Search"
+                class="form-control form-control-lg"
+              />
+              <button
+                type="button"
+                data-lang="en-gb"
+                class="btn btn-light btn-lg"
+              >
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+          </div>
+          <div id="header-cart" class="col-md-4 col-lg-3">
+            <div class="dropdown d-grid">
+              <button
+                type="button"
+                data-bs-toggle="dropdown"
+                class="btn btn-inverse btn-block dropdown-toggle"
+              >
+                <i class="fa-solid fa-cart-shopping"></i> 10 item(s) - $229.90
+              </button>
+              <ul
+                class="dropdown-menu dropdown-menu-right"
+                style="width: 500px"
+              >
+                <li>
+                  <table class="table table-sm table-striped">
+                    <tbody>
+                      <tr>
+                        <td class="text-center">
+                          <a href="pepperoni.html"
+                            ><img
+                              src="Checkout_files/pepporoni-pizza-136x136.jpg"
+                              alt="Pepperoni Pizza"
+                              title="Pepperoni Pizza"
+                              class="img-thumbnail"
+                          /></a>
+                        </td>
+                        <td class="text-start">
+                          <a href="pepperoni.html">Pepperoni Pizza</a>
+                          <br />
+                          <small> - Sizes 14" Medium</small>
+                          <br />
+                          <small> - Crusts Thin</small>
+                          <br />
+                          <small> - Sauces Alfredo</small>
+                          <br />
+                          <small> - Cheeses Cheddar</small>
+                          <br />
+                          <small> - Meats Pepperoni</small>
+                          <br />
+                          <small> - Meats Chicken</small>
+                          <br />
+                          <small> - Meats Hamburger</small>
+                          <br />
+                          <small> - Meats Italian Sausage</small>
+                          <br />
+                          <small> - Meats Bacon</small>
+                          <br />
+                          <small> - Ingredients Artichoke</small>
+                          <br />
+                          <small> - Ingredients Bell Peppers</small>
+                          <br />
+                          <small> - Ingredients Black Olives</small>
+                          <br />
+                          <small> - Ingredients Mushrooms</small>
+                          <br />
+                          <small> - Ingredients Onions</small>
+                        </td>
+                        <td class="text-end">x 10</td>
+                        <td class="text-end">$229.90</td>
+                        <td class="text-end">
+                          <form action="cart.html" method="post">
+                            <input type="hidden" name="key" value="1" />
+                            <button
+                              type="submit"
+                              data-bs-toggle="tooltip"
+                              title="Remove"
+                              class="btn btn-danger"
+                            >
+                              <i class="fa-solid fa-circle-xmark"></i>
+                            </button>
+                          </form>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div>
+                    <table class="table table-sm table-bordered">
+                      <tbody>
+                        <tr>
+                          <td class="text-end"><strong>Sub-Total</strong></td>
+                          <td class="text-end">$229.90</td>
+                        </tr>
+                        <tr>
+                          <td class="text-end"><strong>Total</strong></td>
+                          <td class="text-end">$229.90</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p class="text-end">
+                      <a href="cart.html"
+                        ><strong
+                          ><i class="fa-solid fa-cart-shopping"></i> View
+                          Cart</strong
+                        ></a
+                      >&nbsp;&nbsp;&nbsp;<a href="checkout.html"
+                        ><strong
+                          ><i class="fa-solid fa-share"></i> Checkout</strong
+                        ></a
+                      >
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <nav
+          id="menu"
+          class="navbar navbar-expand-lg navbar-light bg-primary"
+          style=""
+        >
+          <div id="category" class="d-block d-sm-block d-lg-none">
+            Categories
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#narbar-menu"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="narbar-menu">
+            <ul class="nav navbar-nav">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  href="index.html"
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  >Order</a
+                >
+                <div class="dropdown-menu" style="">
+                  <div class="dropdown-inner">
+                    <ul class="list-unstyled">
+                      <li>
+                        <a href="index.html" class="nav-link">Pizzas (6)</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <a href="index.html" class="see-all">Show All Order</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div id="checkout-checkout" class="container">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="index.html"><i class="fas fa-home"></i></a>
+          </li>
+          <li class="breadcrumb-item"><a href="cart.html">Shopping Cart</a></li>
+          <li class="breadcrumb-item"><a href="checkout.html">Checkout</a></li>
+        </ul>
+        <div class="row">
+          <div id="content" class="col">
+            <h1>Checkout</h1>
+            <div class="row">
+              <div class="col-md-7 mb-3">
+                <div id="checkout-register">
+                  <form id="form-register">
+                    <p>
+                      If you already have an account with us, please login at
+                      the <a href="account.html"><strong>login page</strong></a
+                      >.
+                    </p>
+                    <fieldset>
+                      <legend>Your Personal Details</legend>
+                      <div class="row">
+                        <div class="col mb-3 required">
+                          <div class="form-check form-check-inline">
+                            <input
+                              type="radio"
+                              name="account"
+                              value="1"
+                              id="input-register"
+                              class="form-check-input"
+                              checked="checked"
+                            />
+                            <label for="input-register" class="form-check-label"
+                              >Register Account</label
+                            >
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input
+                              type="radio"
+                              name="account"
+                              value="0"
+                              id="input-guest"
+                              class="form-check-input"
+                            />
+                            <label for="input-guest" class="form-check-label"
+                              >Guest Checkout</label
+                            >
+                          </div>
+                        </div>
+                        <div class="col mb-3 d-none">
+                          <label class="form-label">Account Type</label>
+                          <select
+                            name="customer_group_id"
+                            id="input-customer-group"
+                            class="form-select"
+                          >
+                            <option value="1" selected="selected">
+                              Default
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row row-cols-1 row-cols-md-2">
+                        <div class="col mb-3 required">
+                          <label for="input-firstname" class="form-label"
+                            >First Name</label
+                          >
+                          <input
+                            type="text"
+                            name="firstname"
+                            placeholder="First Name"
+                            id="input-firstname"
+                            class="form-control"
+                          />
+                          <div
+                            id="error-firstname"
+                            class="invalid-feedback"
+                          ></div>
+                        </div>
+                        <div class="col mb-3 required">
+                          <label for="input-lastname" class="form-label"
+                            >Last Name</label
+                          >
+                          <input
+                            type="text"
+                            name="lastname"
+                            placeholder="Last Name"
+                            id="input-lastname"
+                            class="form-control"
+                          />
+                          <div
+                            id="error-lastname"
+                            class="invalid-feedback"
+                          ></div>
+                        </div>
+                        <div class="col mb-3 required">
+                          <label for="input-email" class="form-label"
+                            >E-Mail</label
+                          >
+                          <input
+                            type="text"
+                            name="email"
+                            placeholder="E-Mail"
+                            id="input-email"
+                            class="form-control"
+                          />
+                          <div id="error-email" class="invalid-feedback"></div>
+                        </div>
+                      </div>
+                    </fieldset>
+
+                    <fieldset id="shipping-address" style="display: block">
+                      <legend>Shipping Address</legend>
+                      <div class="row row-cols-1 row-cols-md-2">
+                        <div class="col mb-3">
+                          <label for="input-shipping-company" class="form-label"
+                            >Company</label
+                          >
+                          <input
+                            type="text"
+                            name="shipping_company"
+                            placeholder="Company"
+                            id="input-shipping-company"
+                            class="form-control"
+                          />
+                        </div>
+                        <div class="col mb-3 required">
+                          <label
+                            for="input-shipping-address-1"
+                            class="form-label"
+                            >Address 1</label
+                          >
+                          <input
+                            type="text"
+                            name="shipping_address_1"
+                            placeholder="Address 1"
+                            id="input-shipping-address-1"
+                            class="form-control"
+                          />
+                          <div
+                            id="error-shipping-address-1"
+                            class="invalid-feedback"
+                          ></div>
+                        </div>
+                        <div class="col mb-3">
+                          <label
+                            for="input-shipping-address-2"
+                            class="form-label"
+                            >Address 2</label
+                          >
+                          <input
+                            type="text"
+                            name="shipping_address_2"
+                            placeholder="Address 2"
+                            id="input-shipping-address-2"
+                            class="form-control"
+                          />
+                        </div>
+                        <div class="col mb-3 required">
+                          <label for="input-shipping-city" class="form-label"
+                            >City</label
+                          >
+                          <input
+                            type="text"
+                            name="shipping_city"
+                            placeholder="City"
+                            id="input-shipping-city"
+                            class="form-control"
+                          />
+                          <div
+                            id="error-shipping-city"
+                            class="invalid-feedback"
+                          ></div>
+                        </div>
+                        <div class="col mb-3 required">
+                          <label
+                            for="input-shipping-postcode"
+                            class="form-label"
+                            >Post Code</label
+                          >
+                          <input
+                            type="text"
+                            name="shipping_postcode"
+                            placeholder="Post Code"
+                            id="input-shipping-postcode"
+                            class="form-control"
+                          />
+                          <div
+                            id="error-shipping-postcode"
+                            class="invalid-feedback"
+                          ></div>
+                        </div>
+                        <div class="col mb-3 required">
+                          <label for="input-shipping-country" class="form-label"
+                            >Country</label
+                          >
+                          <select
+                            name="shipping_country_id"
+                            id="input-shipping-country"
+                            class="form-select"
+                          >
+                            <option value="">--- Please Select ---</option>
+                            <option value="244">Aaland Islands</option>
+                            <option value="1">Afghanistan</option>
+                            <option value="2">Albania</option>
+                            <option value="3">Algeria</option>
+                            <option value="4">American Samoa</option>
+                            <option value="5">Andorra</option>
+                            <option value="6">Angola</option>
+                            <option value="7">Anguilla</option>
+                            <option value="8">Antarctica</option>
+                            <option value="9">Antigua and Barbuda</option>
+                            <option value="10">Argentina</option>
+                            <option value="11">Armenia</option>
+                            <option value="12">Aruba</option>
+                            <option value="252">
+                              Ascension Island (British)
+                            </option>
+                            <option value="13">Australia</option>
+                            <option value="14">Austria</option>
+                            <option value="15">Azerbaijan</option>
+                            <option value="16">Bahamas</option>
+                            <option value="17">Bahrain</option>
+                            <option value="18">Bangladesh</option>
+                            <option value="19">Barbados</option>
+                            <option value="20">Belarus</option>
+                            <option value="21">Belgium</option>
+                            <option value="22">Belize</option>
+                            <option value="23">Benin</option>
+                            <option value="24">Bermuda</option>
+                            <option value="25">Bhutan</option>
+                            <option value="26">Bolivia</option>
+                            <option value="245">
+                              Bonaire, Sint Eustatius and Saba
+                            </option>
+                            <option value="27">Bosnia and Herzegovina</option>
+                            <option value="28">Botswana</option>
+                            <option value="29">Bouvet Island</option>
+                            <option value="30">Brazil</option>
+                            <option value="31">
+                              British Indian Ocean Territory
+                            </option>
+                            <option value="32">Brunei Darussalam</option>
+                            <option value="33">Bulgaria</option>
+                            <option value="34">Burkina Faso</option>
+                            <option value="35">Burundi</option>
+                            <option value="36">Cambodia</option>
+                            <option value="37">Cameroon</option>
+                            <option value="38">Canada</option>
+                            <option value="251">Canary Islands</option>
+                            <option value="39">Cape Verde</option>
+                            <option value="40">Cayman Islands</option>
+                            <option value="41">Central African Republic</option>
+                            <option value="42">Chad</option>
+                            <option value="43">Chile</option>
+                            <option value="44">China</option>
+                            <option value="45">Christmas Island</option>
+                            <option value="46">Cocos (Keeling) Islands</option>
+                            <option value="47">Colombia</option>
+                            <option value="48">Comoros</option>
+                            <option value="49">Congo</option>
+                            <option value="50">Cook Islands</option>
+                            <option value="51">Costa Rica</option>
+                            <option value="52">Cote D'Ivoire</option>
+                            <option value="53">Croatia</option>
+                            <option value="246">Curacao</option>
+                            <option value="55">Cyprus</option>
+                            <option value="56">Czech Republic</option>
+                            <option value="237">
+                              Democratic Republic of Congo
+                            </option>
+                            <option value="57">Denmark</option>
+                            <option value="58">Djibouti</option>
+                            <option value="59">Dominica</option>
+                            <option value="60">Dominican Republic</option>
+                            <option value="61">East Timor</option>
+                            <option value="62">Ecuador</option>
+                            <option value="63">Egypt</option>
+                            <option value="64">El Salvador</option>
+                            <option value="65">Equatorial Guinea</option>
+                            <option value="66">Eritrea</option>
+                            <option value="67">Estonia</option>
+                            <option value="68">Ethiopia</option>
+                            <option value="69">
+                              Falkland Islands (Malvinas)
+                            </option>
+                            <option value="70">Faroe Islands</option>
+                            <option value="71">Fiji</option>
+                            <option value="72">Finland</option>
+                            <option value="74">France, Metropolitan</option>
+                            <option value="75">French Guiana</option>
+                            <option value="76">French Polynesia</option>
+                            <option value="77">
+                              French Southern Territories
+                            </option>
+                            <option value="126">FYROM</option>
+                            <option value="78">Gabon</option>
+                            <option value="79">Gambia</option>
+                            <option value="80">Georgia</option>
+                            <option value="81">Germany</option>
+                            <option value="82">Ghana</option>
+                            <option value="83">Gibraltar</option>
+                            <option value="84">Greece</option>
+                            <option value="85">Greenland</option>
+                            <option value="86">Grenada</option>
+                            <option value="87">Guadeloupe</option>
+                            <option value="88">Guam</option>
+                            <option value="89">Guatemala</option>
+                            <option value="256">Guernsey</option>
+                            <option value="90">Guinea</option>
+                            <option value="91">Guinea-Bissau</option>
+                            <option value="92">Guyana</option>
+                            <option value="93">Haiti</option>
+                            <option value="94">
+                              Heard and Mc Donald Islands
+                            </option>
+                            <option value="95">Honduras</option>
+                            <option value="96">Hong Kong</option>
+                            <option value="97">Hungary</option>
+                            <option value="98">Iceland</option>
+                            <option value="99">India</option>
+                            <option value="100">Indonesia</option>
+                            <option value="102">Iraq</option>
+                            <option value="103">Ireland</option>
+                            <option value="254">Isle of Man</option>
+                            <option value="104">Israel</option>
+                            <option value="105">Italy</option>
+                            <option value="106">Jamaica</option>
+                            <option value="107">Japan</option>
+                            <option value="257">Jersey</option>
+                            <option value="108">Jordan</option>
+                            <option value="109">Kazakhstan</option>
+                            <option value="110">Kenya</option>
+                            <option value="111">Kiribati</option>
+                            <option value="253">Kosovo, Republic of</option>
+                            <option value="114">Kuwait</option>
+                            <option value="115">Kyrgyzstan</option>
+                            <option value="116">
+                              Lao People's Democratic Republic
+                            </option>
+                            <option value="117">Latvia</option>
+                            <option value="118">Lebanon</option>
+                            <option value="119">Lesotho</option>
+                            <option value="120">Liberia</option>
+                            <option value="121">Libyan Arab Jamahiriya</option>
+                            <option value="122">Liechtenstein</option>
+                            <option value="123">Lithuania</option>
+                            <option value="124">Luxembourg</option>
+                            <option value="125">Macau</option>
+                            <option value="127">Madagascar</option>
+                            <option value="128">Malawi</option>
+                            <option value="129">Malaysia</option>
+                            <option value="130">Maldives</option>
+                            <option value="131">Mali</option>
+                            <option value="132">Malta</option>
+                            <option value="133">Marshall Islands</option>
+                            <option value="134">Martinique</option>
+                            <option value="135">Mauritania</option>
+                            <option value="136">Mauritius</option>
+                            <option value="137">Mayotte</option>
+                            <option value="138">Mexico</option>
+                            <option value="139">
+                              Micronesia, Federated States of
+                            </option>
+                            <option value="140">Moldova, Republic of</option>
+                            <option value="141">Monaco</option>
+                            <option value="142">Mongolia</option>
+                            <option value="242">Montenegro</option>
+                            <option value="143">Montserrat</option>
+                            <option value="144">Morocco</option>
+                            <option value="145">Mozambique</option>
+                            <option value="146">Myanmar</option>
+                            <option value="147">Namibia</option>
+                            <option value="148">Nauru</option>
+                            <option value="149">Nepal</option>
+                            <option value="150">Netherlands</option>
+                            <option value="151">Netherlands Antilles</option>
+                            <option value="152">New Caledonia</option>
+                            <option value="153">New Zealand</option>
+                            <option value="154">Nicaragua</option>
+                            <option value="155">Niger</option>
+                            <option value="156">Nigeria</option>
+                            <option value="157">Niue</option>
+                            <option value="158">Norfolk Island</option>
+                            <option value="159">
+                              Northern Mariana Islands
+                            </option>
+                            <option value="160">Norway</option>
+                            <option value="161">Oman</option>
+                            <option value="162">Pakistan</option>
+                            <option value="163">Palau</option>
+                            <option value="247">
+                              Palestinian Territory, Occupied
+                            </option>
+                            <option value="164">Panama</option>
+                            <option value="165">Papua New Guinea</option>
+                            <option value="166">Paraguay</option>
+                            <option value="167">Peru</option>
+                            <option value="168">Philippines</option>
+                            <option value="169">Pitcairn</option>
+                            <option value="170">Poland</option>
+                            <option value="171">Portugal</option>
+                            <option value="172">Puerto Rico</option>
+                            <option value="173">Qatar</option>
+                            <option value="174">Reunion</option>
+                            <option value="175">România</option>
+                            <option value="176">Russian Federation</option>
+                            <option value="177">Rwanda</option>
+                            <option value="178">Saint Kitts and Nevis</option>
+                            <option value="179">Saint Lucia</option>
+                            <option value="180">
+                              Saint Vincent and the Grenadines
+                            </option>
+                            <option value="181">Samoa</option>
+                            <option value="182">San Marino</option>
+                            <option value="183">Sao Tome and Principe</option>
+                            <option value="184">Saudi Arabia</option>
+                            <option value="185">Senegal</option>
+                            <option value="243">Serbia</option>
+                            <option value="186">Seychelles</option>
+                            <option value="187">Sierra Leone</option>
+                            <option value="188">Singapore</option>
+                            <option value="189">Slovak Republic</option>
+                            <option value="190">Slovenia</option>
+                            <option value="191">Solomon Islands</option>
+                            <option value="192">Somalia</option>
+                            <option value="193">South Africa</option>
+                            <option value="194">
+                              South Georgia &amp; South Sandwich Islands
+                            </option>
+                            <option value="113">South Korea</option>
+                            <option value="248">South Sudan</option>
+                            <option value="195">Spain</option>
+                            <option value="196">Sri Lanka</option>
+                            <option value="249">St. Barthelemy</option>
+                            <option value="197">St. Helena</option>
+                            <option value="250">
+                              St. Martin (French part)
+                            </option>
+                            <option value="198">St. Pierre and Miquelon</option>
+                            <option value="199">Sudan</option>
+                            <option value="200">Suriname</option>
+                            <option value="201">
+                              Svalbard and Jan Mayen Islands
+                            </option>
+                            <option value="202">Swaziland</option>
+                            <option value="203">Sweden</option>
+                            <option value="204">Switzerland</option>
+                            <option value="206">Taiwan</option>
+                            <option value="207">Tajikistan</option>
+                            <option value="208">
+                              Tanzania, United Republic of
+                            </option>
+                            <option value="209">Thailand</option>
+                            <option value="210">Togo</option>
+                            <option value="211">Tokelau</option>
+                            <option value="212">Tonga</option>
+                            <option value="213">Trinidad and Tobago</option>
+                            <option value="255">Tristan da Cunha</option>
+                            <option value="214">Tunisia</option>
+                            <option value="215">Turkey</option>
+                            <option value="216">Turkmenistan</option>
+                            <option value="217">
+                              Turks and Caicos Islands
+                            </option>
+                            <option value="218">Tuvalu</option>
+                            <option value="219">Uganda</option>
+                            <option value="220">Ukraine</option>
+                            <option value="221">United Arab Emirates</option>
+                            <option value="222">United Kingdom</option>
+                            <option value="223" selected="selected">
+                              United States
+                            </option>
+                            <option value="224">
+                              United States Minor Outlying Islands
+                            </option>
+                            <option value="225">Uruguay</option>
+                            <option value="226">Uzbekistan</option>
+                            <option value="227">Vanuatu</option>
+                            <option value="228">
+                              Vatican City State (Holy See)
+                            </option>
+                            <option value="229">Venezuela</option>
+                            <option value="230">Viet Nam</option>
+                            <option value="231">
+                              Virgin Islands (British)
+                            </option>
+                            <option value="232">Virgin Islands (U.S.)</option>
+                            <option value="233">
+                              Wallis and Futuna Islands
+                            </option>
+                            <option value="234">Western Sahara</option>
+                            <option value="235">Yemen</option>
+                            <option value="238">Zambia</option>
+                            <option value="239">Zimbabwe</option>
+                          </select>
+                          <div
+                            id="error-shipping-country"
+                            class="invalid-feedback"
+                          ></div>
+                        </div>
+                        <div class="col mb-3 required">
+                          <label for="input-shipping-zone" class="form-label"
+                            >Region / State</label
+                          >
+                          <select
+                            name="shipping_zone_id"
+                            id="input-shipping-zone"
+                            class="form-select"
+                            data-oc-value=""
+                          >
+                            <option value="" selected="selected">
+                              --- Please Select ---
+                            </option>
+                            <option value="3613">Alabama</option>
+                            <option value="3614">Alaska</option>
+                            <option value="3615">American Samoa</option>
+                            <option value="3616">Arizona</option>
+                            <option value="3617">Arkansas</option>
+                            <option value="3618">Armed Forces Africa</option>
+                            <option value="3619">Armed Forces Americas</option>
+                            <option value="3620">Armed Forces Canada</option>
+                            <option value="3621">Armed Forces Europe</option>
+                            <option value="3622">
+                              Armed Forces Middle East
+                            </option>
+                            <option value="3623">Armed Forces Pacific</option>
+                            <option value="3624">California</option>
+                            <option value="3625">Colorado</option>
+                            <option value="3626">Connecticut</option>
+                            <option value="3627">Delaware</option>
+                            <option value="3628">District of Columbia</option>
+                            <option value="3629">
+                              Federated States Of Micronesia
+                            </option>
+                            <option value="3630">Florida</option>
+                            <option value="3631">Georgia</option>
+                            <option value="3632">Guam</option>
+                            <option value="3633">Hawaii</option>
+                            <option value="3634">Idaho</option>
+                            <option value="3635">Illinois</option>
+                            <option value="3636">Indiana</option>
+                            <option value="3637">Iowa</option>
+                            <option value="3638">Kansas</option>
+                            <option value="3639">Kentucky</option>
+                            <option value="3640">Louisiana</option>
+                            <option value="3641">Maine</option>
+                            <option value="3642">Marshall Islands</option>
+                            <option value="3643">Maryland</option>
+                            <option value="3644">Massachusetts</option>
+                            <option value="3645">Michigan</option>
+                            <option value="3646">Minnesota</option>
+                            <option value="3647">Mississippi</option>
+                            <option value="3648">Missouri</option>
+                            <option value="3649">Montana</option>
+                            <option value="3650">Nebraska</option>
+                            <option value="3651">Nevada</option>
+                            <option value="3652">New Hampshire</option>
+                            <option value="3653">New Jersey</option>
+                            <option value="3654">New Mexico</option>
+                            <option value="3655">New York</option>
+                            <option value="3656">North Carolina</option>
+                            <option value="3657">North Dakota</option>
+                            <option value="3658">
+                              Northern Mariana Islands
+                            </option>
+                            <option value="3659">Ohio</option>
+                            <option value="3660">Oklahoma</option>
+                            <option value="3661">Oregon</option>
+                            <option value="3662">Palau</option>
+                            <option value="3663">Pennsylvania</option>
+                            <option value="3664">Puerto Rico</option>
+                            <option value="3665">Rhode Island</option>
+                            <option value="3666">South Carolina</option>
+                            <option value="3667">South Dakota</option>
+                            <option value="3668">Tennessee</option>
+                            <option value="3669">Texas</option>
+                            <option value="3670">Utah</option>
+                            <option value="3671">Vermont</option>
+                            <option value="3672">Virgin Islands</option>
+                            <option value="3673">Virginia</option>
+                            <option value="3674">Washington</option>
+                            <option value="3675">West Virginia</option>
+                            <option value="3676">Wisconsin</option>
+                            <option value="3677">Wyoming</option>
+                          </select>
+                          <div
+                            id="error-shipping-zone"
+                            class="invalid-feedback"
+                          ></div>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <div class="row static-checkout-account">
+                      <div id="password" class="col-12 mb-3 required">
+                        <fieldset>
+                          <legend>Your Password</legend>
+                          <div class="row">
+                            <div class="col mb-3 required">
+                              <label for="input-password" class="form-label"
+                                >Password</label
+                              >
+                              <input
+                                type="password"
+                                name="password"
+                                value=""
+                                placeholder="Password"
+                                id="input-password"
+                                class="form-control"
+                              />
+                              <div
+                                id="error-password"
+                                class="invalid-feedback"
+                              ></div>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                      <div class="col-12 mb-3 static-checkout-actions">
+                        <div class="form-check">
+                          <input
+                            type="checkbox"
+                            name="newsletter"
+                            value="1"
+                            id="input-newsletter"
+                            class="form-check-input"
+                          />
+                          <label for="input-newsletter" class="form-check-label"
+                            >I wish to subscribe to the Urban Fire Pizza Project
+                            newsletter.</label
+                          >
+                        </div>
+                        <div id="agree" class="form-check">
+                          <input
+                            type="checkbox"
+                            name="agree"
+                            value="1"
+                            id="input-register-agree"
+                            class="form-check-input"
+                          />
+                          <label
+                            for="input-register-agree"
+                            class="form-check-label"
+                            >I have read and agree to the
+                            <a href="index.html" class="modal-link"
+                              ><b>Privacy Policy</b></a
+                            ></label
+                          >
+                        </div>
+                        <button
+                          type="submit"
+                          id="button-register"
+                          class="btn btn-primary"
+                        >
+                          Continue
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div id="checkout-shipping-method" class="mb-3">
+                  <form id="form-shipping-method">
+                    <fieldset>
+                      <legend>Shipping Method</legend>
+                      <div class="input-group">
+                        <select
+                          name="shipping_method"
+                          id="input-shipping-method"
+                          class="form-select"
+                          disabled="disabled"
+                        >
+                          <option value="" selected="selected">
+                            --- Please Select ---
+                          </option>
+                        </select>
+                        <button
+                          type="button"
+                          id="button-shipping-method"
+                          class="btn btn-light"
+                        >
+                          <i class="fa-solid fa-rotate"></i>
+                        </button>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+                <div id="checkout-payment-method" class="mb-4">
+                  <form id="form-payment-method">
+                    <fieldset>
+                      <legend>Payment Method</legend>
+                      <div class="input-group">
+                        <select
+                          name="payment_method"
+                          id="input-payment-method"
+                          class="form-select"
+                          disabled="disabled"
+                        >
+                          <option value="" selected="selected">
+                            --- Please Select ---
+                          </option>
+                        </select>
+                        <button
+                          type="button"
+                          id="button-payment-method"
+                          class="btn btn-light"
+                        >
+                          <i class="fa-solid fa-rotate"></i>
+                        </button>
+                      </div>
+                    </fieldset>
+                  </form>
+                  <br />
+                  <div class="mb-2">
+                    <label for="input-comment" class="form-label"
+                      ><strong>Add Comments About Your Order</strong></label
+                    >
+                    <textarea
+                      name="comment"
+                      rows="3"
+                      id="input-comment"
+                      class="form-control"
+                    ></textarea>
+                  </div>
+                </div>
+
+                <div id="checkout-confirm">
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                      <thead>
+                        <tr>
+                          <td class="text-start">Product Name</td>
+                          <td class="text-end">Total</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="text-start">
+                            10x <a href="pepperoni.html">Pepperoni Pizza</a>
+                            <br />
+                            &nbsp;
+                            <small> - Sizes: 14" Medium</small>
+                            <br />
+                            &nbsp;
+                            <small> - Crusts: Thin</small>
+                            <br />
+                            &nbsp;
+                            <small> - Sauces: Alfredo</small>
+                            <br />
+                            &nbsp;
+                            <small> - Cheeses: Cheddar</small>
+                            <br />
+                            &nbsp;
+                            <small> - Meats: Pepperoni</small>
+                            <br />
+                            &nbsp;
+                            <small> - Meats: Chicken</small>
+                            <br />
+                            &nbsp;
+                            <small> - Meats: Hamburger</small>
+                            <br />
+                            &nbsp;
+                            <small> - Meats: Italian Sausage</small>
+                            <br />
+                            &nbsp;
+                            <small> - Meats: Bacon</small>
+                            <br />
+                            &nbsp;
+                            <small> - Ingredients: Artichoke</small>
+                            <br />
+                            &nbsp;
+                            <small> - Ingredients: Bell Peppers</small>
+                            <br />
+                            &nbsp;
+                            <small> - Ingredients: Black Olives</small>
+                            <br />
+                            &nbsp;
+                            <small> - Ingredients: Mushrooms</small>
+                            <br />
+                            &nbsp;
+                            <small> - Ingredients: Onions</small>
+                          </td>
+                          <td class="text-end">$229.90</td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <td class="text-end"><strong>Sub-Total</strong></td>
+                          <td class="text-end">$229.90</td>
+                        </tr>
+                        <tr>
+                          <td class="text-end"><strong>Total</strong></td>
+                          <td class="text-end">$229.90</td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                  <div id="checkout-payment">
+                    <div class="text-end">
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        disabled="disabled"
+                      >
+                        Confirm Order
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="row static-footer-links">
+          <div class="col-sm-4">
+            <h5>Explore</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html">Home &amp; Menu</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-4">
+            <h5>Your Order</h5>
+            <ul class="list-unstyled">
+              <li><a href="cart.html">Shopping Cart</a></li>
+              <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-4">
+            <h5>Demo</h5>
+            <ul class="list-unstyled">
+              <li><a href="account.html">Demo Account</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <p>
+          Powered By <a href="https://www.opencart.com/">OpenCart</a><br />
+          Urban Fire Pizza Project © 2023
+        </p>
+        <!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+      </div>
+    </footer>
+
+    <script type="module" src="static-demo.js"></script>
+  </body>
+  <grammarly-desktop-integration
+    data-grammarly-shadow-root="true"
+  ></grammarly-desktop-integration>
+</html>
