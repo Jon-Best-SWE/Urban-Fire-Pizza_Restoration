@@ -561,8 +561,7 @@ function productPage() {
       const candidate = {
         productId: metadata.id,
         selections: selectionsFromHistoricalForm(form),
-        // Temporary Bug Introduction
-        quantity: Number(form.querySelector("#input-quantity")?.textContent),
+        quantity: Number(form.querySelector("#input-quantity")?.value),
       };
       saveLines(
         editLine
